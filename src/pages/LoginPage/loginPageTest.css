@@ -1,0 +1,72 @@
+@media screen and (max-width: 431px) {
+    span.ant-input-affix-wrapper {
+        width: 96% !important; 
+        max-width: 400px; 
+    }
+
+    .btnBlue {
+        min-width: 381px !important;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .btnBlue {
+        min-width: 369px    !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    span.ant-input-affix-wrapper {
+        width: 98% !important; 
+        max-width: 400px; 
+    }
+
+    .btnBlue {
+        min-width: 337px  !important;
+    }
+}
+@media screen and (max-width: 391px) {
+    span.ant-input-affix-wrapper {
+        width: 98% !important; 
+        max-width: 400px; 
+    }
+
+    .btnBlue {
+        min-width: 340px    !important;
+        margin-left: 12px !important;
+
+    }
+}
+
+@media screen and (max-width: 386px) {
+    .btnBlue {
+        min-width: 333px  !important;
+    }
+}
+
+@media screen and (max-width: 381px) {
+    .btnBlue {
+        min-width: 325px  !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .btnBlue {
+        min-width: 320px  !important;
+    }
+}
+
+@media screen and (max-width: 367px) {
+    .btnBlue {
+        min-width: 313px  !important;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .btnBlue {
+        min-width: 272px    !important;
+        margin-left: 25px !important;
+
+    }
+}
+

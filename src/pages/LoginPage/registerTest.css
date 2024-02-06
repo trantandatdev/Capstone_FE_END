@@ -1,0 +1,211 @@
+/* 14prm */
+@media screen and (max-width: 431px) {
+    
+    .min-w-screen{
+        padding: 0 !important;
+        /* border: none !important; */
+    }
+
+    .css{
+        border-radius: 0;
+    }
+
+    .animation-register{
+        display: block;
+        width: 100%;
+    }
+
+    .animation-register div{
+        height: 100px !important;
+        width: 122px !important;
+    } 
+
+    .form-register{
+        padding-top: 3.5rem;
+        padding-bottom: 19.5rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+    }
+
+    span.ant-input-affix-wrapper{
+        width: 100% !important;
+
+    }
+
+    .phone{
+        width: 98% !important;
+    }
+
+    .nut{
+        display: block;
+    }
+
+    .clear-button{
+        width: 360px !important;
+        margin-bottom: 15px;
+    }
+
+    .register-button{
+        min-width: 360px !important;
+    }
+}
+
+/* s20 ultra */
+@media screen and (max-width: 413px) {
+    .min-w-screen{
+        padding: 0 !important;
+        /* border: none !important; */
+    }
+
+    .css{
+        border-radius: 0;
+    }
+
+    .animation-register{
+        display: block;
+        width: 100%;
+    }
+
+    .animation-register div{
+        height: 100px !important;
+        width: 122px !important;
+    } 
+
+    .form-register{
+        padding-top: 3.5rem;
+        padding-bottom: 19.5rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+    }
+
+    span.ant-input-affix-wrapper{
+        width: 100% !important;
+
+    }
+
+    .phone{
+        width: 100% !important;
+    }
+
+    .nut{
+        display: block;
+    }
+
+    .clear-button{
+        width: 360px !important;
+        margin-bottom: 15px;
+    }
+
+    .register-button{
+        min-width: 360px !important;
+    }
+}
+
+/* 12prx */
+@media screen and (max-width: 391px) {
+    .min-w-screen{
+        padding: 0 !important;
+        /* border: none !important; */
+    }
+
+    .css{
+        border-radius: 0;
+    }
+
+    .animation-register{
+        display: block;
+        width: 100%;
+    }
+
+    .animation-register div{
+        height: 100px !important;
+        width: 122px !important;
+    } 
+
+    .form-register{
+        padding-top: 3.5rem;
+        padding-bottom: 19.5rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+    }
+
+    .ant-input-affix-wrapper{
+        width: 97% !important;
+        max-width: 373px !important;
+        margin-left: 10px !important;
+    }
+
+    .phone{
+        width: 92.6% !important;
+        margin-left: 10px !important;
+    }
+
+    .nut{
+        display: block;
+    }
+
+    .clear-button{
+        width: 350 !important;
+        margin-bottom: 15px;
+    }
+
+    .register-button{
+        min-width: 350 !important;
+    }
+}
+
+/* s8+ */
+@media screen and (max-width: 361px) {
+    .min-w-screen{
+        padding: 0 !important;
+        /* border: none !important; */
+    }
+
+    .css{
+        border-radius: 0;
+    }
+
+    .animation-register{
+        display: block;
+        width: 100%;
+    }
+
+    .animation-register div{
+        height: 100px !important;
+        width: 122px !important;
+    } 
+
+    .form-register{
+        padding-top: 3.5rem;
+        padding-bottom: 19.5rem;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+    }
+
+    span.ant-input-affix-wrapper{
+        width: 87% !important;
+        max-width: 373px !important;
+        margin-left: 25px !important;
+    }
+
+    .phone{
+        width: 85.6% !important;
+        margin-left: 26px !important;
+    }
+
+    .nut{
+        display: block;
+    }
+
+    .clear-button{
+        margin-left: 27px !important;
+        width: 344px  !important;
+
+    }
+
+    
+}
