@@ -1,17 +1,16 @@
-import "./loginPageTest.css";
+import "./loginPage.css";
 import React from "react";
-import { LockOutlined, MailOutlined } from "@ant-design/icons";
-import { Button, Form, Input, message } from "antd";
+import {
+  LockOutlined,
+  MailOutlined,
+  createFromIconfontCN,
+} from "@ant-design/icons";
+import { Button, Form, Input, Space, message } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginAction } from "../../redux/action/user";
-import {
-  FacebookOutlined,
-  TwitterOutlined,
-  GoogleOutlined,
-} from "@ant-design/icons";
+
 export default function LoginPage() {
- 
   let dispatch = useDispatch();
   const onFinish = (values) => {
     console.log("values", values);
@@ -23,16 +22,28 @@ export default function LoginPage() {
     console.log("Failed:", errorInfo);
     message.error("Fail to login!!!");
   };
+  const IconFont = createFromIconfontCN({
+    scriptUrl: [
+      "//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js",
+      // icon-javascript, icon-java, icon-shoppingcart (overridden)
+      "//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js", // icon-shoppingcart, icon-python
+    ],
+  });
+
   return (
     <div>
-      <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8"
-      style={{
-        backgroundColor: "#21D4FD",
-        backgroundImage: "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)",
-      }}>
+      <div
+        className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+        style={{
+          // backgroundColor: "#21D4FD",
+          backgroundImage: "url(https://www.timetoact.de/thumbnail_direct/20422?w=1920&h=1920&solid&max)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className=" hello mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+          Welcome to Jira
           </h2>
           <div className="text-center ">
             <Form.Item>
@@ -51,7 +62,6 @@ export default function LoginPage() {
               className=" flex flex-col align-center justify-center login-form"
               style={{ paddingTop: "10px" }}
               name="normal_login"
-             
               initialValues={{
                 remember: true,
               }}
@@ -70,7 +80,6 @@ export default function LoginPage() {
               >
                 <Input
                   style={{
-                    
                     width: "400px",
                     height: "50px",
                   }}
@@ -90,7 +99,6 @@ export default function LoginPage() {
               >
                 <Input
                   style={{
-                   
                     width: "400px",
                     height: "50px",
                   }}
@@ -126,38 +134,24 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-3 gap-3">
-                <div>
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                  >
-                    <FacebookOutlined
-                      style={{ fontSize: "20px", color: "#3b5998" }}
-                    />
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                  >
-                    <TwitterOutlined
-                      style={{ fontSize: "20px", color: "#1da1f2" }}
-                    />
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                  >
-                    <GoogleOutlined
-                      style={{ fontSize: "20px", color: "#db4437" }}
-                    />
-                  </a>
-                </div>
-              </div>
+              <Space className="mt-6 grid grid-cols-4 gap-4">
+                <IconFont
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  type="icon-javascript"
+                />
+                <IconFont
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  type="icon-java"
+                />
+                <IconFont
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  type="icon-shoppingcart"
+                />
+                <IconFont
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  type="icon-python"
+                />
+              </Space>
             </div>
           </div>
         </div>

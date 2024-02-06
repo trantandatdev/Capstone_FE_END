@@ -8,10 +8,7 @@ import { setInfoAction } from "../../redux/action/user";
 import { useDispatch } from "react-redux";
 import { ConsoleSqlOutlined } from "@ant-design/icons";
 
-
 export default function TabUserSettingDesktop() {
-
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   let data = JSON.parse(localStorage.getItem("USER"));
@@ -19,36 +16,30 @@ export default function TabUserSettingDesktop() {
     "🚀 ~ file: TabUserSetting.jsx:11 ~ TabUserSetting ~ data:",
     data
   );
-  let reduxUser  = useSelector((state) => state.userReducer.user);
-  console.log("🚀 ~ file:reduxUser:", reduxUser)
+  let reduxUser = useSelector((state) => state.userReducer.user);
+  console.log("🚀 ~ file:reduxUser:", reduxUser);
 
   const [newData, setNewData] = useState(data);
 
-console.log("newData",newData)
-  let initValue = {}
-  if(reduxUser){
+  console.log("newData", newData);
+  let initValue = {};
+  if (reduxUser) {
     initValue = {
       id: reduxUser.userId,
       name: reduxUser.name,
       passWord: "",
       email: reduxUser.email,
       phoneNumber: reduxUser.phoneNumber,
-    
-    }
+    };
   } else {
     initValue = {
-      
-        id: newData?.id,
-        name: newData?.name,
-        passWord: "",
-        email: newData?.email,
-        phoneNumber: newData?.phoneNumber,
-      
-    }
+      id: newData?.id,
+      name: newData?.name,
+      passWord: "",
+      email: newData?.email,
+      phoneNumber: newData?.phoneNumber,
+    };
   }
-// const newData = data;
-
-
 
   const [form] = Form.useForm();
   const [componentDisabled, setComponentDisabled] = useState(true);
@@ -64,33 +55,27 @@ console.log("newData",newData)
     usersManageService
       .editUser(updateUser)
       .then((res) => {
-        
         message.success("Successfully updated!");
         setNewData(updateUser);
-       
       })
-      .then(()=>{
-          usersManageService
-              .getUser(data.id)
-              .then((result) => {
+      .then(() => {
+        usersManageService
+          .getUser(data.id)
+          .then((result) => {
+            const nowUser = result.data.content.find(
+              (item) => item.userId == data.id
+            );
 
-                //  console.log("user api", result.data.content);
-                  const nowUser = result.data.content.find(item=>item.userId==data.id)
-                  // console.log("now user",nowUser)
-                dispatch(setInfoAction(nowUser));
-                // localStorage.setItem("USER", JSON.stringify(result.data.content[0]));
-              })
-              .catch((err) => {
-                console.log("err", err);
-              });
-        
-       
+            dispatch(setInfoAction(nowUser));
+          })
+          .catch((err) => {
+            console.log("err", err);
+          });
       })
       .catch((err) => {
         message.error("Failed to update!");
         console.log("🚀 ~ file: TabUserSetting.jsx:36 ~ onFinish ~ err:", err);
       });
-      
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -98,7 +83,6 @@ console.log("newData",newData)
 
   const { Option } = Select;
 
-  // useEffect(() => form.resetFields(), [newData]);
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select
@@ -118,9 +102,6 @@ console.log("newData",newData)
       <div className="flex flex-col justify-center items-center">
         <ConfigProvider
           theme={{
-            //     token:{
-            // margin:10
-            //     },
             components: {
               Form: {
                 itemMarginBottom: 10,
@@ -133,40 +114,31 @@ console.log("newData",newData)
             className=" flex flex-col align-center justify-center"
             form={form}
             name="register"
-            style={
-              {
-                // maxWidth: 1000,
-                // maxHeight: 1000,
-                width:300
-              }
-            }
+            style={{
+              width: 300,
+            }}
             initialValues={initValue}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
             autoComplete="off"
-            // layout="vertical"
           >
-         
             <div className="mb-2 font-medium text-center ">EDIT USER</div>
             <Form.Item
-         
               label=""
               name="id"
               rules={[
                 {
                   required: true,
-                  message: "Please input your name!",
                 },
               ]}
             >
               <Input
-               addonBefore="ID:"
-                style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // width: "400px",
-                  // height: "50px",
-                }}
+                addonBefore="ID:"
+                style={
+                  {
+                    // width:"100vw"
+                  }
+                }
                 disabled={true}
                 value={newData?.userId}
               />
@@ -178,17 +150,19 @@ console.log("newData",newData)
               rules={[
                 {
                   required: true,
-                  message: "Please input your name!",
+                  message: "Vui lòng nhập tên của bạn!",
                 },
               ]}
             >
               <Input
-                style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // width: "400px",
-                  // height: "50px",
-                }}
+                style={
+                  {
+                    // borderColor: "black",
+                    // borderStyle: "dashed",
+                    // width: "400px",
+                    // height: "50px",
+                  }
+                }
                 value={newData?.name}
               />
             </Form.Item>
@@ -196,15 +170,17 @@ console.log("newData",newData)
             <Form.Item
               label="Password"
               name="passWord"
-              rules={[{ required: true }]}
+              rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
             >
               <Input.Password
-                style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // width: "400px",
-                  // height: "50px",
-                }}
+                style={
+                  {
+                    // borderColor: "black",
+                    // borderStyle: "dashed",
+                    // width: "400px",
+                    // height: "50px",
+                  }
+                }
               />
             </Form.Item>
 
@@ -215,17 +191,19 @@ console.log("newData",newData)
                 {
                   type: "email",
                   required: true,
-                  message: "The email address is illegal!",
+                  message: "Địa chỉ email là bất hợp pháp!",
                 },
               ]}
             >
               <Input
-                style={{
-                  // borderColor: "black",e
-                  // borderStyle: "dashed",
-                  // width: "400px",
-                  // height: "50px",
-                }}
+                style={
+                  {
+                    // borderColor: "black",e
+                    // borderStyle: "dashed",
+                    // width: "400px",
+                    // height: "50px",
+                  }
+                }
                 value={newData?.email}
               />
             </Form.Item>
@@ -236,17 +214,19 @@ console.log("newData",newData)
               rules={[
                 {
                   required: true,
-                  message: "Please input your phone number!",
+                  message: "Vui lòng nhập số điện thoại của bạn!",
                 },
               ]}
             >
               <Input
-                style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // width: "400px",
-                  // height: "50px",
-                }}
+                style={
+                  {
+                    // borderColor: "black",
+                    // borderStyle: "dashed",
+                    // width: "400px",
+                    // height: "50px",
+                  }
+                }
                 // addonBefore={prefixSelector}
                 value={newData?.phoneNumber}
               />
@@ -271,7 +251,7 @@ console.log("newData",newData)
                   className="px-3 mx-2 btnCancel"
                   type="text"
                   onClick={() => {
-                    // window.location.href = "/";
+                    
                     navigate("/");
                   }}
                   style={{

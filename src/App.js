@@ -9,8 +9,8 @@ import NewProject from "./components/NewProject/NewProject.jsx";
 import TabUserSetting from "./components/TabUserSetting/TabUserSetting.jsx";
 
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
-import LoginPageTest from "./pages/LoginPage/LoginPageTest.jsx";
-import RegisterTest from "./pages/LoginPage/RegisterTest.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import Register from "./pages/LoginPage/Register.jsx";
 
 function App() {
   return (
@@ -27,8 +27,8 @@ function App() {
             <Route path="/newproject" element={<NewProject />}></Route>
             <Route path="/usersetting" element={<TabUserSetting />}></Route>
           </Route>
-          <Route path="/register" element={<RegisterTest />}></Route>
-          <Route path="/login" element={<LoginPageTest />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/login" element={<LoginPage/>}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
       </BrowserRouter>

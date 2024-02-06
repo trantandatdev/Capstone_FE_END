@@ -12,8 +12,7 @@ import {
 } from "antd";
 
 import { Option } from "antd/es/mentions";
-import { Editor } from "@tinymce/tinymce-react";
-import toast from "react-hot-toast";
+
 import { NavLink, useNavigate } from "react-router-dom";
 
 const NewProjectDesktop = () => {
@@ -83,12 +82,8 @@ const NewProjectDesktop = () => {
             className=" flex flex-col align-center justify-center"
             form={form}
             name="basic"
-            // labelCol={{
-            //   span: 8,
-            // }}
             style={{
-              maxWidth: 400,
-              maxHeight: 300,
+              width: "70vw",
             }}
             initialValues={{
               remember: true,
@@ -100,25 +95,17 @@ const NewProjectDesktop = () => {
           >
             <Form.Item label="Project Name" name="projectname" rules={[]}>
               <Input
-                style={
-                  {
-                    // borderColor: "black",
-                    // borderStyle: "dashed",
-                    // height: "50px",
-                  }
-                }
+                style={{
+                  width: "65.8vw",
+                }}
               />
             </Form.Item>
 
             <Form.Item label="Project Category" name="category" rules={[]}>
               <Select
-                style={
-                  {
-                    // borderColor: "black",
-                    // borderStyle: "dashed",
-                    // height: "50px",
-                  }
-                }
+                style={{
+                  width: "65vw",
+                }}
                 defaultValue="Lựa chọn loại dự án"
               >
                 {category?.map((item, index) => {
@@ -132,16 +119,7 @@ const NewProjectDesktop = () => {
             </Form.Item>
 
             <Form.Item label="Description" name="description" rules={[]}>
-              <Input.TextArea
-                rows={2}
-                style={
-                  {
-                    // borderColor: "black",
-                    // borderStyle: "dashed",
-                    // height: "350px",
-                  }
-                }
-              />
+              <Input.TextArea rows={2} />
             </Form.Item>
 
             <Form.Item className="w-full flex justify-center items-center">

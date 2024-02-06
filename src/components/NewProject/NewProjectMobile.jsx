@@ -40,10 +40,7 @@ const NewProjectMobile = () => {
       .then((res) => {
         console.log(" NewProject.jsx:45 ~ .then ~ res:", res);
         message.success("Đăng ký thành công");
-        // setTimeout(() => {
-        //   // window.location.href = "/";
-        
-        // }, 1000);
+
         navigate("/");
         form.resetFields();
         setRandomNumber(Math.random());
@@ -61,23 +58,19 @@ const NewProjectMobile = () => {
     <div className="container">
       {/* <HeaderBar /> */}
       <Breadcrumb
-          items={[
-            {
-              title: <NavLink to="/">Projects</NavLink>,
-            },
-            {
-              title: "New Project",
-            },
-          ]}
-        />
-        <h3 className="text-center  mb-3 font-medium ">NEW PROJECT</h3>
+        items={[
+          {
+            title: <NavLink to="/">Projects</NavLink>,
+          },
+          {
+            title: "New Project",
+          },
+        ]}
+      />
+      <h3 className="text-center  mb-3 font-medium ">NEW PROJECT</h3>
       <div className="flex flex-col justify-center items-center">
-      
         <ConfigProvider
           theme={{
-            //     token:{
-            // margin:10
-            //     },
             components: {
               Form: {
                 itemMarginBottom: 10,
@@ -87,16 +80,11 @@ const NewProjectMobile = () => {
           }}
         >
           <Form
-          className=" flex flex-col align-center justify-center"
+            className=" flex flex-col align-center justify-center"
             form={form}
             name="basic"
-            // labelCol={{
-            //   span: 8,
-            // }}
             style={{
-              maxWidth: 400,
-              maxHeight: 300,
-
+              width: "70vw",
             }}
             initialValues={{
               remember: true,
@@ -109,9 +97,7 @@ const NewProjectMobile = () => {
             <Form.Item label="Project Name" name="projectname" rules={[]}>
               <Input
                 style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // height: "50px",
+                  width: "65.8vw",
                 }}
               />
             </Form.Item>
@@ -119,9 +105,7 @@ const NewProjectMobile = () => {
             <Form.Item label="Project Category" name="category" rules={[]}>
               <Select
                 style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // height: "50px",
+                  width: "65vw",
                 }}
                 defaultValue="Lựa chọn loại dự án"
               >
@@ -136,24 +120,20 @@ const NewProjectMobile = () => {
             </Form.Item>
 
             <Form.Item label="Description" name="description" rules={[]}>
-      
-              <Input.TextArea
-                rows={2}
-                style={{
-                  // borderColor: "black",
-                  // borderStyle: "dashed",
-                  // height: "350px",
-                }}
-              />
+              <Input.TextArea rows={2} />
             </Form.Item>
 
             <Form.Item className="w-full flex justify-center items-center">
-              <Button className="px-2 mx-1 btnBlue" type="primary" htmlType="submit" size="small">
+              <Button
+                className="px-3 mx-2 btnBlue"
+                type="primary"
+                htmlType="submit"
+              >
                 Submit
               </Button>
+
               <Button
-                className="px-2 mx-1 btnCancel"
-                size="small"
+                className="px-3 mx-2 btnCancel"
                 type="text"
                 onClick={() => {
                   // window.location.href = "/";

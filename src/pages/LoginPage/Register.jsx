@@ -1,6 +1,6 @@
-import * as registerJson from "./../../assets/animation/register.json";
+import * as registerJson from "../../assets/animation/register.json";
 import Lottie from "react-lottie";
-import "./registerTest.css";
+import "./register.css";
 import { Button, ConfigProvider, Form, Input, Select, message } from "antd";
 import React from "react";
 import { userService } from "../../services/service";
@@ -13,7 +13,7 @@ import {
   UserAddOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-function RegisterTest() {
+function Register() {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const dispatch = useDispatch();
@@ -306,4 +306,4 @@ function RegisterTest() {
     </div>
   );
 }
-export default RegisterTest;
+export default Register;

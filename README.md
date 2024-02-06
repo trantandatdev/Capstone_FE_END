@@ -1,4 +1,7 @@
-
+Bài cuối khóa về dự án Jira:
+1. Thành viên của nhóm:
+- Trần Tấn Đạt
+- Nguyễn Trung Nghĩa
 
 In the project directory, you can run:
 
